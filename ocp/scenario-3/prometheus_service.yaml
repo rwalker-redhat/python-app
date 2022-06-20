@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus-svc
+  labels:
+    app: my-prometheus
+    namespace: scenario-3
+spec:
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: web
+    port: 9090
+    protocol: TCP
+    targetPort: 9090
+  selector:
+    app: my-prometheus
+  sessionAffinity: None
+  type: ClusterIP
+

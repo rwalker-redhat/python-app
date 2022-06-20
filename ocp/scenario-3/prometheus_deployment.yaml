@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-prometheus
+  namespace: scenario-3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-prometheus
+  template:
+    metadata:
+      labels:
+        app: my-prometheus
+    spec:
+      volumes:
+      - name: prometheus-data
+        persistentVolumeClaim:
+          claimName: prometheus
+      containers:
+      - name: my-prometheus
+        image: image-registry.openshift-image-registry.svc:5000/scenario-3/prometheus:latest
+        ports:
+        - containerPort: 9090
+        volumeMounts:
+        - name: prometheus-data
+          mountPath: /var/lib/prometheus

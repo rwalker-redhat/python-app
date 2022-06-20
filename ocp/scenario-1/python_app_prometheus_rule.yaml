@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: arbitrary-counter-alert
+  namespace: scenario-1
+spec:
+  groups:
+  - name: example-group
+    rules:
+    - alert: ArbitraryCounterAlert
+      annotations:
+        message: Arbitrary Counter Limit
+      expr: arbitrary_counter_total > 20
+      labels:
+        severity: critical

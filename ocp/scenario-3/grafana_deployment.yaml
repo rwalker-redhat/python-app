@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-grafana
+  namespace: scenario-3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-grafana
+  template:
+    metadata:
+      labels:
+        app: my-grafana
+    spec:
+      containers:
+      - name: my-grafana
+        image: image-registry.openshift-image-registry.svc:5000/scenario-3/grafana:latest
+        ports:
+        - containerPort: 3000
+

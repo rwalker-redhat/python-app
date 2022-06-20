@@ -1,0 +1,83 @@
+<!-- templates/_base.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FastAPI Toolkit</title>
+    <link rel="icon" href="/static/img/favicon.ico">
+    <!-- CSS FILES -->
+    <link rel="stylesheet" type="text/css" href="static/css/uikit.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/dashboard.css">
+  </head>
+  <body>
+    <!--HEADER-->
+    <header id="top-head" class="uk-position-fixed">
+      <div class="uk-container uk-container-expand uk-background-secondary">
+        <nav class="uk-navbar uk-light" data-uk-navbar="mode:click; duration: 250">
+          <div class="uk-navbar-left">
+            <div class="uk-navbar-item uk-hidden@m">
+              <a class="uk-logo" href="/"><span><img class="custom-logo" src="static/img/fastapi.svg" alt="">&nbsp Toolkit</span></a>
+            </div>
+          </div>
+          <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav">
+              <li><a class="uk-navbar-toggle" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav"
+                title="Offcanvas" data-uk-tooltip></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!--/HEADER-->
+    <!-- LEFT BAR -->
+    <aside id="left-col" class="uk-light uk-visible@m">
+      <div class="left-logo uk-flex uk-flex-middle">
+        <a class="uk-logo" href="/"><span><img class="custom-logo" src="static/img/fastapi.svg" alt="">&nbsp Toolkit</span></a>
+      </div>
+      <div class="left-nav-wrap">
+        <ul class="uk-nav uk-nav-default uk-nav-parent-icon" data-uk-nav>
+          <li class="uk-nav-header">NAVIGATION</li>
+          <li><a href="/"><span data-uk-icon="icon: home" class="uk-margin-small-right"></span>Home</a></li>
+          <li><a href="/apis"><span data-uk-icon="icon: chevron-right"
+            class="uk-margin-small-right"></span>RestAPIs</a></li>
+          <li><a href="/kafka"><span data-uk-icon="icon: chevron-right" class="uk-margin-small-right"></span>Kafka</a></li>
+          <li><a href="/prometheus"><span data-uk-icon="icon: chevron-right" class="uk-margin-small-right"></span>Logger</a>
+          </li>
+          <li><a href="/prometheus"><span data-uk-icon="icon: chevron-right" class="uk-margin-small-right"></span>Prometheus</a>
+          </li>
+          <li><a href=""><span data-uk-icon="icon: github" class="uk-margin-small-right"></span>GitHub</a></li>
+        </ul>
+      </div>
+    </aside>
+    <!-- /LEFT BAR -->
+    {% block content %}
+    {% endblock %}
+    <!-- OFFCANVAS -->
+    <div id="offcanvas-nav" data-uk-offcanvas="flip: true; overlay: true">
+      <div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
+        <button class="uk-offcanvas-close uk-close uk-icon" type="button" data-uk-close></button>
+        <ul class="uk-nav uk-nav-default">
+          <li class="uk-nav-header">NAVIGATION</li>
+          <li><a href="/"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: home"></span> Home</a></li>
+          <li><a href="/apis"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon:  chevron-right"></span>
+            RestAPIs</a>
+          </li>
+          <li><a href="/kafka"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon:  chevron-right"></span>
+            Kafka</a>
+          </li>
+          <li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon:  chevron-right"></span>
+            Logger</a>
+          </li>
+          <li><a href="/prometheus"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon:  chevron-right"></span>
+            Prometheus</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- /OFFCANVAS -->
+    <!-- JS FILES -->
+    <script src="static/js/uikit.min.js"></script>
+    <script src="static/js/uikit-icons.min.js"></script>
+  </body>
+</html>

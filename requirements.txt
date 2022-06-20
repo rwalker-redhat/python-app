@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+jinja2
+kafka-python
+aiokafka
+environs
+prometheus-client
+prometheus-fastapi-instrumentator
+python-multipart

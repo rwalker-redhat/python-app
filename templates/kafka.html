@@ -1,0 +1,82 @@
+<!-- templates/kafka.html -->
+{% extends "_base.html" %}
+{% block content %}
+<!-- CONTENT -->
+<div id="content" data-uk-height-viewport="expand: true">
+  <div class="uk-container uk-container-expand">
+    <hr>
+    <div class="uk-grid uk-grid-medium" data-uk-grid uk-sortable="handle: .sortable-icon">
+      <!-- panel -->
+      <div class="uk-width-1-1@l">
+        <div class="uk-card uk-card-default uk-card-large">
+          <div class="uk-card-header">
+            <div class="uk-grid uk-grid-small">
+              <div class="uk-width-auto">
+                <h3>{{ context.page }}</h3>
+              </div>
+            </div>
+          </div>
+          <div class="uk-card-body">
+            <div>
+              <p>Goto <a href="/docs">/docs</a> for the built-in swagger API documentation.</p>
+              <h4>Kafka Producer</h4>
+              <code></code>
+              <form method="POST" action="/producer">
+                <table class="uk-table uk-table-middle uk-table-divider">
+                   <tbody>
+                    <tr>
+                      <td class="uk-width-1-4">Produce Event</td>
+                      <td class="uk-width-2-4">A simple API that adds an event onto a Kafka topic.</td>
+                      <td></td>
+                      <td class="uk-width-1-4">
+                        <button class="uk-button uk-button-primary uk-border-rounded" type="submit" name='producer_action'
+                          value="Producer!!">Create&nbspEvent
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </form>
+
+              <h4>Results</h4>
+              <code>{{ context.produce_event }}</code>
+
+              <h4>Kafka Consumer</h4>
+              <code></code>
+                 <form method="POST" action="consumer">
+                <table class="uk-table uk-table-middle uk-table-divider uk-table-expand">
+                   <tbody>
+                    <tr>
+                      <td class="uk-width-1-4">Consume Event</td>
+                      <td class="uk-width-2-4">A simple API that reads a Kafka topic.</td>
+                      <td></td>
+                      <td class="uk-width-1-4">
+                        <button class="uk-button uk-button-primary uk-border-rounded" type="submit" name='consumer_action'
+                          value="Consumer!!">Consume&nbspEvents
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </form>
+
+              <h4>Results</h4>
+              <code>{{ context.consume_event }}</code>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /panel -->
+    </div>
+    <footer class="uk-section uk-section-small uk-text-center">
+      <hr>
+      <p class="uk-text-small uk-text-center">Copyright 2022 - FastAPI Toolkit | Built with <a
+        href="https://fastapi.tiangolo.com" title="FastAPI" target="_blank" data-uk-tooltip><span
+        data-uk-icon="link"></span>FastAPI</a></p>
+    </footer>
+  </div>
+</div>
+<!-- /CONTENT -->
+{% endblock %}

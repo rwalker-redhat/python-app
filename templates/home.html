@@ -1,0 +1,35 @@
+<!-- templates/home.html -->
+{% extends "_base.html" %}
+{% block content %}
+<!-- CONTENT -->
+<div id="content" data-uk-height-viewport="expand: true">
+  <div class="uk-container uk-container-expand">
+    <hr>
+    <div class="uk-grid uk-grid-medium" data-uk-grid uk-sortable="handle: .sortable-icon">
+      <!-- panel -->
+      <div class="uk-width-1-1@l">
+        <div class="uk-card uk-card-default uk-card-small">
+          <div class="uk-card-header">
+            <div class="uk-grid uk-grid-small">
+              <div class="uk-width-auto">
+                <h4>Home</h4>
+              </div>
+            </div>
+          </div>
+          <div class="uk-card-body">
+            <div class="chart-container">
+              <canvas id="chart2"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /panel -->
+    </div>
+    <footer class="uk-section uk-section-small uk-text-center">
+      <hr>
+      <p class="uk-text-small uk-text-center">Copyright 2022 - FastAPI Toolkit | Built with <a href="https://fastapi.tiangolo.com" title="FastAPI" target="_blank" data-uk-tooltip><span data-uk-icon="link"></span>FastAPI</a> </p>
+    </footer>
+  </div>
+</div>
+<!-- /CONTENT -->
+{% endblock %}

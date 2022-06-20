@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    k8s-app: my-python-app-monitor
+  name: my-python-app-monitor
+  namespace: scenario-2
+spec:
+  endpoints:
+  - interval: 30s
+    port: web
+    scheme: http
+  selector:
+    matchLabels:
+      app: my-python-app

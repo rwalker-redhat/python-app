@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana-svc
+  namespace: scenario-2
+  labels:
+    app: my-grafana
+spec:
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: web
+    port: 3000
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: my-grafana
+  sessionAffinity: None
+  type: ClusterIP

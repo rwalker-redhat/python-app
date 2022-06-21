@@ -10,6 +10,6 @@ spec:
     - alert: ArbitraryCounterAlert
       annotations:
         message: Arbitrary Counter Limit
-      expr: arbitrary_counter_total > 20
+      expr: arbitrary_counter > 20
       labels:
         severity: critical

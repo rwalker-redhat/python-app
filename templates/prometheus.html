@@ -17,7 +17,6 @@
             </div>
           </div>
           <div class="uk-card-body">
-            <div class="chart-container">
               <p>Goto <a href="/metrics">/metrics</a> to view metrics.</p>
               <form method="POST">
                     <table class="uk-table uk-table-middle uk-table-divider">
@@ -38,16 +37,14 @@
                             <td>{{ value }}</td>
                             <td>
 
-                                <button class="uk-button uk-button-primary uk-border-rounded" type="submit" name='action'
-                          value="metric">Increment
-                        </button>
+                                <button class="uk-button uk-button-primary uk-border-rounded" type="submit" name="action" value="increment">increment</button>
+                                <button class="uk-button uk-button-primary uk-border-rounded" type="submit" name="action" value="decrease">Decrease</button>
                             </td>
                         </tr>
                         </tbody>
                     </table>
                 </form>
             </div>
-          </div>
         </div>
       </div>
       <!-- /panel -->

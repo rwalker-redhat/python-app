@@ -16,4 +16,6 @@ scrape_configs:
   - job_name: 'https-prometheus'
     scheme: https
     static_configs:
-    - targets: ['python-app-route-scenario-2.apps.cluster-gwt45.gwt45.sandbox265.opentlc.com']
+    - targets: ['python-app-route-scenario-2.apps.cluster-gwt45.gwt45.sandbox265.opentlc.com',
+                'python-app-route-scenario-3.apps.cluster-gwt45.gwt45.sandbox265.opentlc.com']
+
